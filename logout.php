@@ -1,7 +1,13 @@
 <?php
-    session_start();
-    session_unset();
-    session_destroy();
+ session_start();
 
-    header("Location: index.php");
+  echo "Logout Successfully ";
+  unset($_SESSION["userid"]);
+  unset($_SESSION["name"]);
+  unset($_SESSION["email"]);
+  unset($_SESSION["phone"]);
+  unset($_SESSION["address"]);
+  unset($_SESSION["total_amt"]);
+  session_destroy();   // function that Destroys Session 
+  header("Location: index.php");
 ?>
